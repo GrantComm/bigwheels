@@ -208,6 +208,11 @@ Result Device::ConfigureExtensions(const grfx::DeviceCreateInfo* pCreateInfo)
         mExtensions.push_back(VK_KHR_MULTIVIEW_EXTENSION_NAME);
     }
 
+    // MultiView
+    if (ElementExists(std::string(VK_KHR_MULTIVIEW_EXTENSION_NAME), mFoundExtensions)) {
+        mExtensions.push_back(VK_KHR_MULTIVIEW_EXTENSION_NAME);
+    }
+
     // Push descriptors
     if (ElementExists(std::string(VK_KHR_PUSH_DESCRIPTOR_EXTENSION_NAME), mFoundExtensions)) {
         mExtensions.push_back(VK_KHR_PUSH_DESCRIPTOR_EXTENSION_NAME);
