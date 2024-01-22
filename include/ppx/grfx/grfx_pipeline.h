@@ -153,6 +153,12 @@ struct OutputState
     grfx::Format depthStencilFormat                          = grfx::FORMAT_UNDEFINED;
 };
 
+struct MultiViewState
+{
+    uint32_t viewMask        = 0;
+    uint32_t correlationMask = 0;
+};
+
 //! @struct GraphicsPipelineCreateInfo
 //!
 //!
