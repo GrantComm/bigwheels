@@ -928,6 +928,14 @@ uint32_t XrComponent::GetDefaultViewMask() const
     return 0;
 }
 
+uint32_t XrComponent::GetDefaultViewMask() const
+{
+    if (IsMultiView()) {
+        return (1 << mViews.size()) - 1;
+    }
+    return 0;
+}
+
 // -------------------------------------------------------------------------------------------------
 // XrCamera
 // -------------------------------------------------------------------------------------------------

@@ -124,6 +124,7 @@ private:
     bool                                           mHasExtendedDynamicState                    = false;
     bool                                           mHasMultiView                               = false;
     bool                                           mHasDepthClipEnabled                        = false;
+    bool                                           mHasMultiView                               = false;
     bool                                           mHasDynamicRendering                        = false;
     PFN_vkResetQueryPoolEXT                        mFnResetQueryPoolEXT                        = nullptr;
     PFN_vkWaitSemaphores                           mFnWaitSemaphores                           = nullptr;
