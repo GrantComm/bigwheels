@@ -217,7 +217,11 @@ public:
     // The values for the frustum planes will be sent to the OpenXR runtime
     // as part of the frame depth info submission, and the caller must ensure
     // that the values do not change within a frame.
-    void    SetFrustumPlanes(float nearZ, float farZ);
+    glm::mat4 GetViewProjectionMatrix(uint32_t viewIndex, float nearZ, float farZ);
+    glm::mat4 GetProjectionMatrixForViewAndSetFrustumPlanes(uint32_t viewIndex, float nearZ, float farZ);
+    glm::mat4 GetProjectionMatrixForCurrentViewAndSetFrustumPlanes(float nearZ, float farZ);
+    glm::mat4 GetViewMatrix(uint32_t viewIndex) const;
+    glm::mat4 GetViewMatrixForCurrentView() const;
     XrPosef GetPoseForCurrentView() const;
 
     std::optional<XrPosef> GetUIAimState() const { return mImguiAimState; }
