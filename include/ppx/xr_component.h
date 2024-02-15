@@ -133,7 +133,7 @@ struct XrComponentCreateInfo
     bool                    enableDebug          = false;
     bool                    enableQuadLayer      = false;
     bool                    enableDepthSwapchain = false;
-    bool                    enableMultiView      = false;
+    bool                    enableMultiView      = true;
     XrComponentResolution   resolution           = {0, 0};
     XrComponentResolution   uiResolution         = {0, 0};
 

@@ -26,13 +26,13 @@ const grfx::Api kApi = grfx::API_VK_1_1;
 void CubeXrApp::Config(ppx::ApplicationSettings& settings)
 {
     settings.appName                    = "sample_04_cube";
-    settings.enableImGui                = false;
+    settings.enableImGui                = true;
     settings.grfx.api                   = kApi;
     settings.grfx.swapchain.depthFormat = grfx::FORMAT_D32_FLOAT;
     settings.grfx.pacedFrameRate        = 0;
     settings.xr.enable                  = true;
     settings.xr.enableDebugCapture      = false;
-    settings.xr.enableMultiView         = false;
+    settings.xr.enableMultiView         = true;
 #if PPX_ANDROID
     settings.xr.enable = true;
 #endif
@@ -294,7 +294,7 @@ void CubeXrApp::Render()
         // current view index
 
         if (!GetXrComponent().IsMultiView()) {
-            frame.uniform_buffer_data.M[0] = frame.uniform_buffer_data.M[currentViewIndex];
+            frame.uniform_buffer_data.M[0] = frame.uniform_buffer_data.M[GetCurrentViewIndex()];
         }
 
         void* pData = nullptr;
