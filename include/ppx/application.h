@@ -405,7 +405,7 @@ public:
     uint32_t GetCurrentViewIndex() const
     {
         uint32_t current_view_index = 0;
-        current_view_index = (IsXrEnabled() ? mXrComponent.GetCurrentViewIndex() : 0);
+        current_view_index          = (IsXrEnabled() ? mXrComponent.GetCurrentViewIndex() : 0);
 
         return current_view_index;
     }

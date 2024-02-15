@@ -108,8 +108,8 @@ void CubeXrApp::Setup()
         gpCreateInfo.outputState.renderTargetFormats[0] = GetSwapchain()->GetColorFormat();
         gpCreateInfo.outputState.depthStencilFormat     = GetSwapchain()->GetDepthFormat();
         gpCreateInfo.pPipelineInterface                 = mPipelineInterface;
-        gpCreateInfo.multiViewMask.viewMask             = GetXrComponent().GetDefaultViewMask();
-        gpCreateInfo.multiViewMask.correlationMask      = GetXrComponent().GetDefaultViewMask();
+        gpCreateInfo.multiViewState.viewMask            = GetXrComponent().GetDefaultViewMask();
+        gpCreateInfo.multiViewState.correlationMask     = GetXrComponent().GetDefaultViewMask();
         PPX_CHECKED_CALL(GetDevice()->CreateGraphicsPipeline(&gpCreateInfo, &mPipeline));
     }
 
