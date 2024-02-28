@@ -34,11 +34,12 @@ public:
 
     const VkPhysicalDeviceFeatures& GetDeviceFeatures() const { return mDeviceFeatures; }
 
-    bool           HasDescriptorIndexingFeatures() const { return mHasDescriptorIndexingFeatures; }
-    bool           HasTimelineSemaphore() const { return mHasTimelineSemaphore; }
-    bool           HasExtendedDynamicState() const { return mHasExtendedDynamicState; }
-    bool           HasDepthClipEnabled() const { return mHasDepthClipEnabled; }
-    bool           HasMultiView() const { return mHasMultiView; }
+    bool HasDescriptorIndexingFeatures() const { return mHasDescriptorIndexingFeatures; }
+    bool HasTimelineSemaphore() const { return mHasTimelineSemaphore; }
+    bool HasExtendedDynamicState() const { return mHasExtendedDynamicState; }
+    bool HasDepthClipEnabled() const { return mHasDepthClipEnabled; }
+    bool HasMultiView() const { return mHasMultiView; }
+
     virtual Result WaitIdle() override;
 
     virtual bool PipelineStatsAvailable() const override;
