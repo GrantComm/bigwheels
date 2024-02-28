@@ -137,6 +137,7 @@ struct RenderPassCreateInfo
         CREATE_INFO_VERSION_3         = 3,
     };
 
+<<<<<<< HEAD
     grfx::Ownership           ownership           = grfx::OWNERSHIP_REFERENCE;
     CreateInfoVersion         version             = CREATE_INFO_VERSION_UNDEFINED;
     uint32_t                  width               = 0;
