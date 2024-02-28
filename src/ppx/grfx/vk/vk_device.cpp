@@ -246,8 +246,7 @@ Result Device::ConfigureFeatures(const grfx::DeviceCreateInfo* pCreateInfo, VkPh
 {
     vk::Gpu* pGpu = ToApi(pCreateInfo->pGpu);
 
-    VkPhysicalDeviceFeatures foundFeatures = {};
-    vkGetPhysicalDeviceFeatures(pGpu->GetVkGpu(), &foundFeatures);
+    VkPhysicalDeviceFeatures          foundFeatures          = {};
     VkPhysicalDeviceMultiviewFeatures foundMultiViewFeatures = {VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_FEATURES};
 
     if (GetInstance()->GetApi() >= grfx::API_VK_1_1) {

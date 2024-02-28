@@ -727,8 +727,7 @@ void XrComponent::EndFrame(const std::vector<grfx::SwapchainPtr>& swapchains, ui
         layers.data(),                        // layers
     };
 
-    auto a = xrEndFrame(mSession, &frameEndInfo);
-    CHECK_XR_CALL(a);
+    CHECK_XR_CALL(xrEndFrame(mSession, &frameEndInfo));
 }
 
 void XrComponent::ConditionallyPopulateProjectionLayer(const std::vector<grfx::SwapchainPtr>& swapchains, uint32_t startIndex, XrLayerBaseQueue& layerQueue, XrProjectionLayer& projectionLayer)
