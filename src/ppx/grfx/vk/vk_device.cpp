@@ -208,11 +208,6 @@ Result Device::ConfigureExtensions(const grfx::DeviceCreateInfo* pCreateInfo)
         mExtensions.push_back(VK_KHR_MULTIVIEW_EXTENSION_NAME);
     }
 
-    // MultiView
-    if (ElementExists(std::string(VK_KHR_MULTIVIEW_EXTENSION_NAME), mFoundExtensions)) {
-        mExtensions.push_back(VK_KHR_MULTIVIEW_EXTENSION_NAME);
-    }
-
     // Push descriptors
     if (ElementExists(std::string(VK_KHR_PUSH_DESCRIPTOR_EXTENSION_NAME), mFoundExtensions)) {
         mExtensions.push_back(VK_KHR_PUSH_DESCRIPTOR_EXTENSION_NAME);
@@ -335,7 +330,6 @@ Result Device::ConfigureDescriptorIndexingFeatures(
     const grfx::DeviceCreateInfo* pCreateInfo, VkPhysicalDeviceDescriptorIndexingFeatures& diFeatures)
 {
     vk::Gpu* pGpu = ToApi(pCreateInfo->pGpu);
-
     VkPhysicalDeviceDescriptorIndexingFeatures foundDiFeatures{VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES};
     VkPhysicalDeviceFeatures2                  foundFeatures{VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2, &foundDiFeatures};
     vkGetPhysicalDeviceFeatures2(pGpu->GetVkGpu(), &foundFeatures);
