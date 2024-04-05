@@ -26,7 +26,6 @@ namespace vk {
 
 Result RenderPass::CreateRenderPass(const grfx::internal::RenderPassCreateInfo* pCreateInfo)
 {
-    bool hasMultiView   = ToApi(GetDevice())->HasMultiView();
     bool hasDepthSencil = mDepthStencilView ? true : false;
 
     uint32_t      depthStencilAttachment = -1;
